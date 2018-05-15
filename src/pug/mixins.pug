@@ -1,1 +1,24 @@
 include ./mixins/typography
+
+
+mixin server_info(icon, description)
+	.col-lg-4.col-md-6.col-sm-6
+		article.server-info__item
+			.server-info__item--image
+				img(src=icon)
+			.server-info__item--description
+				p= description
+
+
+mixin advantages_server(heading, description)
+	.col-md-4
+		.advantages__server.advantages__item
+			p.advantages__server--heading= heading
+			p.advantages__server--description= description
+
+mixin header_menu(params)
+	ul.menu-container
+		each item in params
+			li.menu-container__item
+				a(href=item.link).menu-container__item--link
+					img(src=item.img, alt=item.text).menu-container__item--image

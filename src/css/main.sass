@@ -24,11 +24,13 @@ body input:required:valid,
 body textarea:required:valid
 	color: #666
 
-body
-	color: #333
-	font-family: $font-base
+html
 	font-size: $font-size-base
 	line-height: em(24px, $font-size-base)
+
+body
+	font-family: $font-base
+	color: #333
 	min-width: 320px
 	overflow-x: hidden
 	position: relative
@@ -37,7 +39,10 @@ body
 	display: none
 
 // Custom styles here
+@import "./blocks/_header"
+@import "./blocks/_advantages"
+@import "./blocks/_vk_group"
 
-
+@import "./blocks/_footer"
 //ALWAYS END
 @import "_media.sass"

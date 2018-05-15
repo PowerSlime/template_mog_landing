@@ -1,0 +1,28 @@
+header.container-fluid.header
+	.container.header__container
+		section.nav-bar.row
+			.nav-bar__logo.col-md-6
+				img(src='./img/logo.png').nav-bar__logo--image
+				p.nav-bar__logo--text Magic of gods
+
+			nav.nav-bar__menu.ml-auto.col-md-6.col-xl-2
+				+header_menu([
+					{link: '#', text: 'Главная', img: './img/icons/www.svg'},
+					{link: '#', text: 'VK', img: './img/icons/vk.svg'},
+					{link: '#', text: 'Donate', img: './img/icons/dollar-symbol.svg'}
+				])
+
+		section.rom-logo.row
+			.rom-logo__block
+				img(src='./img/rom_logo.png' alt='ROM Logo').rom-logo__block--image
+				img(src='./img/flame.png' alt='Background fire').rom-logo__block--flame
+
+		section.title.row
+			.title__container.col-12
+				h1.title__container--text Классический сервер
+				p.title__container--description с #[mark 60] капом
+
+		section.play-now.row.justify-content-center
+			.play-now__button.col-md-3
+				a(href='#').play-now__button--link Начать игру
+

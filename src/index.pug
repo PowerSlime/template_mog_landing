@@ -15,7 +15,14 @@ html(lang="EN")
 
 
 	body
-		+typography()
+		include ./pug/header
+		include ./pug/advantages
+		include ./pug/vk_group
+
+		//- Download and registration section
+		//- Days until launch section
+
+		include ./pug/footer
 
 		include ./pug/scripts
 		include ./pug/ie_fix

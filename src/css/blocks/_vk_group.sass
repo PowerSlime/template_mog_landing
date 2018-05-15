@@ -1,0 +1,25 @@
+@import '../_var'
+@import '../_functions'
+@import '../_extends'
+
+.vk-group
+	background: $color-primary
+	padding: 50px 0
+
+	&__info
+		color: $color-text
+		&--heading
+			font-size: rem(36px, $font-size-base)
+			font-weight: 700
+
+		&--description
+			font-weight: 300
+
+	&__box
+		padding: 0
+		margin: 0 15px
+
+		@media screen and (max-width: $media-md)
+			margin: 0 15px !important // Fuck you bootstrap with your !important. Fuck me too, for my shitty code
+
+		@extend %smooth-shadow
