@@ -16,9 +16,18 @@ mixin advantages_server(heading, description)
 			p.advantages__server--heading= heading
 			p.advantages__server--description= description
 
+
 mixin header_menu(params)
 	ul.menu-container
 		each item in params
 			li.menu-container__item
 				a(href=item.link).menu-container__item--link
 					img(src=item.img, alt=item.text).menu-container__item--image
+
+
+mixin download_buttons(params)
+	ul.download__block--buttons
+		each item in params
+			li.buttons__button
+				a(href=item.link, target=item.blank ? '_blank':'_self').buttons__button--link
+					img(src=item.image, alt=item.description ? item.description:'logo').buttons__button--image

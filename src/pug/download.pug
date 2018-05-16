@@ -1,0 +1,42 @@
+include ./mixins
+
+-
+	var download_game_buttons = [
+		{link: '#', image: './img/icons/drive.png', blank: true},
+		{link: '#', image: './img/icons/magnet.png'},
+		{link: '#', image: './img/icons/u-torrent-logo.png'}
+	];
+
+	var download_update_buttons = [
+		{link: '#', image: './img/icons/drive.png', blank: true},
+		{link: '#', image: './img/icons/magnet.png'},
+		{link: '#', image: './img/icons/u-torrent-logo.png'}
+	]
+
+section.download
+	.container
+		.row.justify-content-center
+			.col-md-4
+				.download__block
+					.download__block--container
+						h3.download__block--heading Скачать клиент
+						+download_buttons(download_game_buttons)
+
+			.col-md-4
+				.download__block.registration__block
+					.download__block--container.registration__block--container
+						h3.download__block--heading.registration__block--heading #[a(href="#") Регистрация]
+
+			.col-md-4
+				.download__block
+					.download__block--container
+						h3.download__block--heading Обновление
+						+download_buttons(download_update_buttons)
+
+section.server
+	.container
+		.row
+			.col-12
+				article.server__block
+					.server__block--container
+						p.server__block--start-date Сервер работает уже #[strong 100] дней!
