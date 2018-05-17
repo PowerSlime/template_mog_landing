@@ -10,7 +10,6 @@ $.ajax({
 
 const printAjaxData = (data, isDone) => {
 	$(document).ready(() => {
-		console.log(data, isDone);
 		try {
 			data = JSON.parse(data);
 		} catch (e) {
