@@ -1,26 +1,18 @@
+section.server-info.container(id="ajaxApp")
+
 section.advantages.container
 	.row.justify-content-center
-		+advantages_server(60, 'текущий кап')
-		+advantages_server(66, 'игроков онлаин')
-		+advantages_server('2x', 'текущие рейты')
-	.row
-		.col-md-12
-			.advantages__server-offline.advantages__item
-				p.advantages__server-offline--description На данный момент сервер #[strong недоступен].
-
-section.server-info.container
-	.row.justify-content-center
-		+server_info(
+		+advantages_server(
 			'./img/features/diamond.png',
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae vitae saepe voluptatum ipsum magni adipisci laudantium vel, dolore fuga consectetur praesentium est ab perspiciatis, dicta tempore. Mollitia quae recusandae totam?'
 		)
 
-		+server_info(
+		+advantages_server(
 			'./img/features/diamond.png',
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem cupiditate, libero tenetur aliquam ipsum recusandae consequuntur eius illo inventore iusto quisquam tempora earum quam atque placeat aut, impedit itaque pariatur, eos dolorem. Deleniti a officiis maxime iste dolores praesentium quas veniam necessitatibus natus, cum deserunt animi voluptates impedit porro sapiente!'
 		)
 
-		+server_info(
+		+advantages_server(
 			'./img/features/diamond.png',
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas doloribus quia, optio natus ut cupiditate.'
 		)

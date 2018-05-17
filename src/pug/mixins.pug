@@ -1,20 +1,20 @@
 include ./mixins/typography
 
 
-mixin server_info(icon, description)
+mixin advantages_server(icon, description)
 	.col-lg-4.col-md-6.col-sm-6
 		article.server-info__item
-			.server-info__item--image
+			.advantages__item--image
 				img(src=icon)
-			.server-info__item--description
+			.advantages__item--description
 				p= description
 
 
-mixin advantages_server(heading, description)
+mixin server_info(heading, description)
 	.col-md-4
-		.advantages__server.advantages__item
-			p.advantages__server--heading= heading
-			p.advantages__server--description= description
+		.server-info__server.advantages__item
+			p.server-info__server--heading= heading
+			p.server-info__server--description= description
 
 
 mixin header_menu(params)

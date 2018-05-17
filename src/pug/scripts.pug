@@ -1,6 +1,16 @@
 include ./mixins/bootstrap
 
 +bootstrap_scripts()
+//- Jquery
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+
+//- VK
 script(type="text/javascript" src="//vk.com/js/api/openapi.js?154")
 script
 	| VK.Widgets.Group("vk_groups", {mode: 4, width: "auto", height: "500"}, 150619577);
+
+//- Custom scripts
+//- Moment.JS
+script(type="text/javascript" src="./moment.js")
+script(type="text/javascript" src="./server-date.js")
+script(type="text/javascript" src="./server-api.js")
