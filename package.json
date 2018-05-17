@@ -20,6 +20,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.2.1",
     "imagemin-jpeg-recompress": "^5.1.0",
+    "jstransformer-markdown-it": "^2.1.0",
     "node-bourbon": "^4.2.8"
   },
   "devDependencies": {},

@@ -6,8 +6,7 @@ mixin advantages_server(icon, description)
 		article.server-info__item
 			.advantages__item--image
 				img(src=icon)
-			.advantages__item--description
-				p= description
+			.advantages__item--description!= description
 
 
 mixin server_info(heading, description)
