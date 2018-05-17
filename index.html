@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="EN">
 	<head>
-		<title>Starter Template</title>
+		<title>Magic of gods - классический сервер с 60 капом</title>
 		<meta charset="utf-8">
 		<meta name="description" content="">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
 				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500,700&amp;amp;subset=cyrillic">
 		<link rel="stylesheet" href="./css/main.min.css">
@@ -42,57 +42,29 @@
 				</section>
 			</div>
 		</header>
+		<section class="server-info container" id="ajaxApp"></section>
 		<section class="advantages container">
-			<div class="row justify-content-center">
-				<div class="col-md-4">
-					<div class="advantages__server advantages__item">
-						<p class="advantages__server--heading">60</p>
-						<p class="advantages__server--description">текущий кап</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="advantages__server advantages__item">
-						<p class="advantages__server--heading">66</p>
-						<p class="advantages__server--description">игроков онлаин</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="advantages__server advantages__item">
-						<p class="advantages__server--heading">2x</p>
-						<p class="advantages__server--description">текущие рейты</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="advantages__server-offline advantages__item">
-						<p class="advantages__server-offline--description">На данный момент сервер <strong>недоступен</strong>.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="server-info container">
 			<div class="row justify-content-center">
 				<div class="col-lg-4 col-md-6 col-sm-6">
 					<article class="server-info__item">
-						<div class="server-info__item--image"><img src="./img/features/diamond.png"/></div>
-						<div class="server-info__item--description">
+						<div class="advantages__item--image"><img src="./img/features/diamond.png"/></div>
+						<div class="advantages__item--description">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae vitae saepe voluptatum ipsum magni adipisci laudantium vel, dolore fuga consectetur praesentium est ab perspiciatis, dicta tempore. Mollitia quae recusandae totam?</p>
 						</div>
 					</article>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-6">
 					<article class="server-info__item">
-						<div class="server-info__item--image"><img src="./img/features/diamond.png"/></div>
-						<div class="server-info__item--description">
+						<div class="advantages__item--image"><img src="./img/features/diamond.png"/></div>
+						<div class="advantages__item--description">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem cupiditate, libero tenetur aliquam ipsum recusandae consequuntur eius illo inventore iusto quisquam tempora earum quam atque placeat aut, impedit itaque pariatur, eos dolorem. Deleniti a officiis maxime iste dolores praesentium quas veniam necessitatibus natus, cum deserunt animi voluptates impedit porro sapiente!</p>
 						</div>
 					</article>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-6">
 					<article class="server-info__item">
-						<div class="server-info__item--image"><img src="./img/features/diamond.png"/></div>
-						<div class="server-info__item--description">
+						<div class="advantages__item--image"><img src="./img/features/diamond.png"/></div>
+						<div class="advantages__item--description">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas doloribus quia, optio natus ut cupiditate.</p>
 						</div>
 					</article>
@@ -157,7 +129,7 @@
 					<div class="col-12">
 						<article class="server__block">
 							<div class="server__block--container">
-								<p class="server__block--start-date">Сервер работает уже <strong>100</strong> дней!</p>
+								<p class="server__block--start-date" data-server-birthday="01/01/2018">Сервер работает!</p>
 							</div>
 						</article>
 					</div>
@@ -179,8 +151,12 @@
 				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="//vk.com/js/api/openapi.js?154"></script>
 		<script>VK.Widgets.Group("vk_groups", {mode: 4, width: "auto", height: "500"}, 150619577);</script>
+		<script type="text/javascript" src="./moment.js"></script>
+		<script type="text/javascript" src="./server-date.js"></script>
+		<script type="text/javascript" src="./server-api.js"></script>
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 	</body>
