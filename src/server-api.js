@@ -1,5 +1,5 @@
-const serverApiLink = 'http://localhost:8080';
-const serverApiPath = '/api/server/online';
+const serverApiLink = '';
+const serverApiPath = '/server_api.php';
 
 $.ajax({
 	url: `${serverApiLink}${serverApiPath}`,
