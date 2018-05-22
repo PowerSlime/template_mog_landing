@@ -153,6 +153,7 @@
 				</div>
 			</div>
 		</section>
+		<div id="vk_community_messages"></div>
 		<section class="download">
 			<div class="container">
 				<div class="row justify-content-center">
@@ -220,7 +221,10 @@
 				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="//vk.com/js/api/openapi.js?154"></script>
-		<script>VK.Widgets.Group("vk_groups", {mode: 4, width: "auto", height: "500"}, 150619577);</script>
+		<script>
+			VK.Widgets.Group("vk_groups", {mode: 4, width: "auto", height: "500"}, 150619577);
+			VK.Widgets.CommunityMessages("vk_community_messages", 150619577, {expandTimeout: "30000",disableNewMessagesSound: "1",tooltipButtonText: "Есть вопрос?"});
+		</script>
 		<script type="text/javascript" src="./moment.js"></script>
 		<script type="text/javascript" src="./server-date.js"></script>
 		<script type="text/javascript" src="./server-api.js"></script>
