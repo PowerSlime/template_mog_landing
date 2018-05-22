@@ -8,6 +8,7 @@ script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
 script(type="text/javascript" src="//vk.com/js/api/openapi.js?154")
 script
 	| VK.Widgets.Group("vk_groups", {mode: 4, width: "auto", height: "500"}, 150619577);
+	| VK.Widgets.CommunityMessages("vk_community_messages", 150619577, {expandTimeout: "30000",disableNewMessagesSound: "1",tooltipButtonText: "Есть вопрос?"});
 
 //- Custom scripts
 
