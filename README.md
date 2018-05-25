@@ -9,4 +9,4 @@ My HTML template for a "Runes of Magic" game server. Built using **gulp** with *
 There is a [demo](https://powerslime.github.io/template_mog_landing/). You can found **fully working** page [here](https://play.magicofgods.ru/).
 
 ## P.S.
-I'll be happy for any feedback ;-) About the code too :D
+I'll be happy for any feedback :wink: About the code too :D
