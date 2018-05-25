@@ -20,7 +20,7 @@ mixin header_menu(params)
 	ul.menu-container
 		each item in params
 			li.menu-container__item
-				a(href=item.link).menu-container__item--link
+				a(href=item.link, target=item.blank ? '_blank':'_self').menu-container__item--link
 					img(src=item.img, alt=item.text).menu-container__item--image
 
 
