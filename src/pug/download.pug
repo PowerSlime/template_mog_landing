@@ -1,6 +1,8 @@
 include ./mixins
 
 -
+	var showUpdatesBlock = false;
+
 	var download_game_buttons = [
 		{link: '#', image: './img/icons/drive.png', blank: true},
 		{link: '#', image: './img/icons/magnet.png'},
@@ -16,19 +18,20 @@ include ./mixins
 section.download
 	.container
 		.row.justify-content-center
-			.col-md-4
+			div(class=showUpdatesBlock ? "col-md-4":"col-md-6")
 				.download__block
 					.download__block--container
 						h3.download__block--heading Скачать клиент
 						+download_buttons(download_game_buttons)
 
-			.col-md-4
+			div(class=showUpdatesBlock ? "col-md-4":"col-md-6")
 				.download__block.registration__block
 					.download__block--container.registration__block--container
 						h3.download__block--heading.registration__block--heading #[a(href="//forum.magicofgods.ru/index.php?register/", target="_blank") Регистрация]
 
-			.col-md-4
-				.download__block
-					.download__block--container
-						h3.download__block--heading Обновление
-						+download_buttons(download_update_buttons)
+			if showUpdatesBlock
+				.col-md-4
+					.download__block
+						.download__block--container
+							h3.download__block--heading Обновление
+							+download_buttons(download_update_buttons)
