@@ -1,5 +1,5 @@
 # Description
-My HTML template for a "Runes of Magic"'s game server. Built using **gulp** with *imagemin*, *jade* (PUG) and *sass*. It's responsable too!
+My HTML template for a "Runes of Magic" game server. Built using **gulp** with *imagemin*, *jade* (PUG) and *sass*. It's responsable too!
 
 ## Preview
 
