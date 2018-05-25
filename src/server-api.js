@@ -28,12 +28,12 @@ const printAjaxData = (data, isDone) => {
 			];
 
 			let block = $('<div class="row">');
-			for (key of keys) {
+			for (item of keys) {
 				block.append(`
 					<div class="col-md-4">
 						<div class="server-info__server advantages__item">
-							<p class="server-info__server--heading">${response[key.key]}</p>
-							<p class="server-info__server--description">${key.description}</p>
+							<p class="server-info__server--heading">${response[item.key]}</p>
+							<p class="server-info__server--description">${item.description}</p>
 						</div>
 					</div>
 				`)
