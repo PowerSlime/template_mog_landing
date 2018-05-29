@@ -3,7 +3,7 @@ const serverApiPath = '/server_api.php';
 
 $.ajax({
 	url: `${serverApiLink}${serverApiPath}`,
-	timeout: 500
+	timeout: 30000
 })
 	.done(data => printAjaxData(data, true))
 	.fail(data => printAjaxData(data, false));
