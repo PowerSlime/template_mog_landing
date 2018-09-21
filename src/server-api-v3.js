@@ -1,5 +1,5 @@
-const serverApiLink = '';
-const serverApiPath = '/server_api.php';
+const serverApiLink = 'https://host.magicofgods.ru';
+const serverApiPath = '/api/server';
 
 $.ajax({
 	url: `${serverApiLink}${serverApiPath}`,

@@ -3,7 +3,7 @@
 @import '../_extends'
 
 .header
-	background: url('../img/background.jpg') center 100%/cover no-repeat
+	background: url('../img/background-d9.jpg') center 100%/cover no-repeat
 
 	&__container
 		min-height: 100vh
@@ -95,6 +95,7 @@
 			height: 480px
 
 			@media screen and (max-width: $media-xs)
+				display: none
 				height: 320px
 
 			&--image
@@ -113,6 +114,9 @@
 				animation: pulse 3s ease-in infinite
 
 	.title
+		@media screen and (max-width: $media-xs)
+			margin-top: auto
+
 		&__container
 			color: $color-text
 			text-align: center
@@ -149,6 +153,10 @@
 	.play-now
 		margin-top: auto
 		margin-bottom: 50px
+
+		@media screen and (max-width: $media-xs)
+			margin-top: 50px
+
 		&__button
 			&--link
 				align-items: center
