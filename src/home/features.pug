@@ -1,0 +1,21 @@
+mixin add-feature(image, header, description)
+    .feature
+        .feature-image
+            +add-image({src: image})
+        .feature-header= header
+        .feature-description= description
+
+.features-wrapper#features
+    .container.features-container
+        .row
+            .col-12
+                .features-gallery.js-init--features-gallery
+                    +add-feature("static/features/item-1.png", "Заработок алмазов", "Огромное количество способов заработка алмазов. От выполнения квестов до убийства боссов.")
+                    +add-feature("static/features/item-2.png", "Система классов", "Стандартная система классов, но с исправлением неиграбельных связок")
+                    +add-feature("static/features/item-3.png", "Карты монстров", "Улучшены карты монстров, добавлены новые с боссов, добавлен обмен карт на алмазы.")
+                    +add-feature("static/features/item-4.png", "Система отношений", "Усилены бафы от отношений. Отношения качаются в разы быстрее, чем в оригинале.")
+                    +add-feature("static/features/item-5.png", "Бафы гильдии", "Улучшены бафы гильдии.")
+                    +add-feature("static/features/item-6.png", "Система PVP", "Измененная система PVP , больше нет ваншотов и добавлена система репутации!")
+                    +add-feature("static/features/item-7.png", "Лимит бафов", "Увеличен лимит бафов до 100.")
+                    +add-feature("static/features/item-8.png", "Талант", "Страна грез, в которой очень быстро и легко фармится талант.")
+                    +add-feature("static/features/item-9.png", "х2 лут", "Возможность получать х2 лут с боссов, имея при себе Шапку санты.")

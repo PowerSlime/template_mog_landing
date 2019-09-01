@@ -28,41 +28,249 @@
 </head>
 
 <body>
+    <header class="header" id="header">
+        <div class="header-wrapper js-init--header">
+            <div class="container header-container">
+                <div class="row align-items-center">
+                    <div class="col-6 col-md-1">
+                        <a class="logo-link" href="#header">
+                            <svg class="logo logo--header">
+                                <use xlink:href="svg/sprite.svg#svg--logo"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-7 ml-auto">
+                        <nav class="nav" id="main-nav">
+                            <ul class="nav-list">
+                                <li><a href="https://magicofgods.ru/">Новости</a>
+                                </li>
+                                <li><a href="#howtoplay">Скачать</a>
+                                </li>
+                                <li><a href="#features">Преимущества</a>
+                                </li>
+                                <li><a href="https://forum.magicofgods.ru/index.php?threads/%D0%A0%D0%B5%D1%84%D0%B5%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0.9/">Реферальная система</a>
+                                </li>
+                                <li><a href="https://vk.com/magicofgods">Мы в ВК</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     <section class="content">
-        <div class="container">
-            <h1>Header 1</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quibusdam molestiae voluptates maxime sint sunt libero itaque dignissimos quae, qui provident recusandae magnam non, sequi iusto consectetur, rerum accusantium quos.</p>
-            <ul>
-                <li>Lorem.</li>
-                <li>Lorem ipsum.</li>
-                <li>Lorem ipsum dolor.</li>
-            </ul>
-            <ol>
-                <li>Lorem ipsum dolor.</li>
-                <li>Veniam, quaerat, assumenda!</li>
-                <li>Odit, placeat, a.</li>
-            </ol>
-            <h2>Header 2</h2>
-            <p><strong>Some text</strong> included in "strong" tag <b>another one</b> in "b" tag.</p>
-            <h3>Header 3</h3>
-            <p><em>Cursive</em> text with <i>"i" tag</i> to.</p>
-            <h4>Header 4</h4>
-            <p><u>Undescored</u> and <s>stroked</s>
-            </p>
-            <h5>Header 5</h5><pre>A bit of preformated text
-</pre>
-            <h6>Header 6</h6>
-            <blockquote>And some quote</blockquote>
-            <table>
-                <tr>
-                    <th>Table header</th>
-                    <th>Table header</th>
-                </tr>
-                <tr>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                </tr>
-            </table>
+        <div class="main-wrapper">
+            <a class="donate-link" href="https://donate.magicofgods.ru/" target="_blank">
+                <img alt="Photo" src="img/diamond.svg" />
+            </a>
+            <div class="main-contaienr">
+                <div class="main-gallery js-init--main-gallery">
+                    <div class="container main-gallery-item-container">
+                        <div class="row main-gallery-item align-items-center">
+                            <div class="col-md-4">
+                                <h2 class="main-gallery-item-header">Мировые боссы!</h2>
+                                <div class="main-gallery-item-description">Ходите на них с 75 уровня каждый день в 19:00 по мск. и получайте плюшки</div><a class="main-gallery-item-play" href="#howtoplay">Начать игру</a>
+                            </div>
+                            <div class="col-md-8 main-gallery-item-photo-container">
+                                <div class="main-gallery-item-photo main-gallery-item-photo--1">
+                                    <img alt="Photo" src="static/image-1.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container main-gallery-item-container">
+                        <div class="row main-gallery-item align-items-center">
+                            <div class="col-md-4">
+                                <h2 class="main-gallery-item-header">Алмазы за инвенты!</h2>
+                                <div class="main-gallery-item-description">Выполняйте ивенты на мосту Варанаса и зарабатывайте алмазы</div><a class="main-gallery-item-play" href="#howtoplay">Начать игру</a>
+                            </div>
+                            <div class="col-md-8 main-gallery-item-photo-container">
+                                <div class="main-gallery-item-photo main-gallery-item-photo--2">
+                                    <img alt="Photo" src="static/image-2.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container main-gallery-item-container">
+                        <div class="row main-gallery-item align-items-center">
+                            <div class="col-md-4">
+                                <h2 class="main-gallery-item-header">Ежедневные подарки!</h2>
+                                <div class="main-gallery-item-description">Выполняйте ивенты на мосту Варанаса и зарабатывайте алмазы</div><a class="main-gallery-item-play" href="#howtoplay">Начать игру</a>
+                            </div>
+                            <div class="col-md-8 main-gallery-item-photo-container">
+                                <div class="main-gallery-item-photo main-gallery-item-photo--3">
+                                    <img alt="Photo" src="static/image-3.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container main-gallery-item-container">
+                        <div class="row main-gallery-item align-items-center">
+                            <div class="col-md-4">
+                                <h2 class="main-gallery-item-header">Уникальные ивенты!</h2>
+                                <div class="main-gallery-item-description">Уникальные ивенты сервера: Алмазная лихорадка, Печать стихий и многие другие!</div><a class="main-gallery-item-play" href="#howtoplay">Начать игру</a>
+                            </div>
+                            <div class="col-md-8 main-gallery-item-photo-container">
+                                <div class="main-gallery-item-photo main-gallery-item-photo--4">
+                                    <img alt="Photo" src="static/image-4.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-wrapper">
+            <div class="container stats-container">
+                <div class="row stats-row js-init--stats">{{#stats}}
+                    <div class="col-md-3">
+                        <div class="stats-block">
+                            <div class="stats-block-header">{{header}}</div>
+                            <div class="stats-block-description">{{description}}</div>
+                        </div>
+                    </div>{{/stats}} {{#error}}
+                    <div class="col-9">
+                        <div class="stats-block">
+                            <div class="stats-block-header">{{header}}</div>
+                            <div class="stats-block-description">{{description}}</div>
+                        </div>
+                    </div>{{/error}} {{#date}}
+                    <div class="col-md-3 ml-auto">
+                        <div class="stats-block stats-block--date">
+                            <div class="stats-block-header">{{header}}</div>
+                            <div class="stats-block-description">{{description}}</div>
+                        </div>
+                    </div>{{/date}}</div>
+            </div>
+        </div>
+        <div class="howtoplay-wrapper" id="howtoplay">
+            <div class="container howtoplay-container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="howtoplay-header">Как начать играть</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="howtoplay-step">
+                            <h3 class="howtoplay-step-header">Шаг 1</h3>
+                            <a class="howtoplay-step-photo" href="static/step-1.jpg" data-fancybox="steps">
+                                <img alt="Photo" src="static/step-1.jpg" />
+                            </a>
+                            <div class="howtoplay-step-description">Скачайте клиент <em>(~13Gb)</em> 
+                                <br>
+                                <a href="" target="_blank">Torrent</a>, <a href="" target="_blank">Google Drive</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="howtoplay-step">
+                            <h3 class="howtoplay-step-header">Шаг 2</h3>
+                            <a class="howtoplay-step-photo" href="static/step-2.jpg" data-fancybox="steps">
+                                <img alt="Photo" src="static/step-2.jpg" />
+                            </a>
+                            <div class="howtoplay-step-description"><a href="" target="_blank">Зарегистрируйтесь</a> и подтвердите учетную запись.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="howtoplay-step">
+                            <h3 class="howtoplay-step-header">Шаг 3</h3>
+                            <a class="howtoplay-step-photo" href="static/step-3.jpg" data-fancybox="steps">
+                                <img alt="Photo" src="static/step-3.jpg" />
+                            </a>
+                            <div class="howtoplay-step-description">Запустите лаунчер и начните играть</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="features-wrapper" id="features">
+            <div class="container features-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="features-gallery js-init--features-gallery">
+                            <div class="feature">
+                                <div class="feature-image">
+                                    <img alt="Photo" src="static/features/item-1.png" />
+                                </div>
+                                <div class="feature-header">Заработок алмазов</div>
+                                <div class="feature-description">Огромное количество способов заработка алмазов. От выполнения квестов до убийства боссов.</div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-image">
+                                    <img alt="Photo" src="static/features/item-2.png" />
+                                </div>
+                                <div class="feature-header">Система классов</div>
+                                <div class="feature-description">Стандартная система классов, но с исправлением неиграбельных связок</div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-image">
+                                    <img alt="Photo" src="static/features/item-3.png" />
+                                </div>
+                                <div class="feature-header">Карты монстров</div>
+                                <div class="feature-description">Улучшены карты монстров, добавлены новые с боссов, добавлен обмен карт на алмазы.</div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-image">
+                                    <img alt="Photo" src="static/features/item-4.png" />
+                                </div>
+                                <div class="feature-header">Система отношений</div>
+                                <div class="feature-description">Усилены бафы от отношений. Отношения качаются в разы быстрее, чем в оригинале.</div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-image">
+                                    <img alt="Photo" src="static/features/item-5.png" />
+                                </div>
+                                <div class="feature-header">Бафы гильдии</div>
+                                <div class="feature-description">Улучшены бафы гильдии.</div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-image">
+                                    <img alt="Photo" src="static/features/item-6.png" />
+                                </div>
+                                <div class="feature-header">Система PVP</div>
+                                <div class="feature-description">Измененная система PVP , больше нет ваншотов и добавлена система репутации!</div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-image">
+                                    <img alt="Photo" src="static/features/item-7.png" />
+                                </div>
+                                <div class="feature-header">Лимит бафов</div>
+                                <div class="feature-description">Увеличен лимит бафов до 100.</div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-image">
+                                    <img alt="Photo" src="static/features/item-8.png" />
+                                </div>
+                                <div class="feature-header">Талант</div>
+                                <div class="feature-description">Страна грез, в которой очень быстро и легко фармится талант.</div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-image">
+                                    <img alt="Photo" src="static/features/item-9.png" />
+                                </div>
+                                <div class="feature-header">х2 лут</div>
+                                <div class="feature-description">Возможность получать х2 лут с боссов, имея при себе Шапку санты.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="news-wrapper">
+            <div class="container news-container">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <div class="news-header">Следи за новостями сервера!</div>
+                        <div class="news-description">В группе публикуются самые последние изменения о сервере. Описание обновлений, изменений, нововведений и конкурсов. Успей первым увидеть все самое новое!</div>
+                    </div>
+                    <div class="col-md-4 ml-auto mt-4 mt-md-0">
+                        <div id="vk-news"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <footer class="footer">
@@ -75,13 +283,16 @@
                     </div>
                 </div>
                 <div class="col-md-1 ml-auto">
-                    <svg class="logo logo--footer">
-                        <use xlink:href="svg/sprite.svg#svg--logo"></use>
-                    </svg>
+                    <a class="logo-link" href="#header">
+                        <svg class="logo logo--header">
+                            <use xlink:href="svg/sprite.svg#svg--logo"></use>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?154" defer></script>
     <script src="js/vendors.js" defer></script>
     <script src="js/bundle.js" defer></script>
 </body>

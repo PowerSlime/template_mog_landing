@@ -1,0 +1,21 @@
+.stats-wrapper
+    .container.stats-container
+        .row.stats-row.js-init--stats
+            | {{#stats}}
+            .col-md-3
+                .stats-block
+                    .stats-block-header {{header}}
+                    .stats-block-description {{description}}
+            | {{/stats}}
+            | {{#error}}
+            .col-9
+                .stats-block
+                    .stats-block-header {{header}}
+                    .stats-block-description {{description}}
+            | {{/error}}
+            | {{#date}}
+            .col-md-3.ml-auto
+                .stats-block.stats-block--date
+                    .stats-block-header {{header}}
+                    .stats-block-description {{description}}
+            | {{/date}}

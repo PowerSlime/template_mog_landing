@@ -1,0 +1,37 @@
+-
+    var links = {
+        torrent: "",
+        drive: "",
+        registration: "",
+    };
+
+.howtoplay-wrapper#howtoplay
+    .container.howtoplay-container
+        .row
+            .col-12
+                h2.howtoplay-header Как начать играть
+        .row
+            .col-md-4
+                .howtoplay-step
+                    h3.howtoplay-step-header Шаг 1
+                    a(href="static/step-1.jpg" data-fancybox="steps").howtoplay-step-photo
+                        +add-image({src: "static/step-1.jpg"})
+                    .howtoplay-step-description.
+                        Скачайте клиент #[em (~13Gb)] #[br]
+                        #[a(href=links.torrent target="_blank") Torrent], #[a(href=links.drive target="_blank") Google Drive]
+
+            .col-md-4
+                .howtoplay-step
+                    h3.howtoplay-step-header Шаг 2
+                    a(href="static/step-2.jpg" data-fancybox="steps").howtoplay-step-photo
+                        +add-image({src: "static/step-2.jpg"})
+                    .howtoplay-step-description.
+                        #[a(href=links.registration target="_blank") Зарегистрируйтесь] и подтвердите учетную запись.
+
+            .col-md-4
+                .howtoplay-step
+                    h3.howtoplay-step-header Шаг 3
+                    a(href="static/step-3.jpg" data-fancybox="steps").howtoplay-step-photo
+                        +add-image({src: "static/step-3.jpg"})
+                    .howtoplay-step-description.
+                        Запустите лаунчер и начните играть

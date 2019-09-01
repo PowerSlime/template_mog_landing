@@ -12,14 +12,20 @@
   "author": "PowerSlime",
   "license": "MIT",
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "bootstrap": "^4.3.1",
+    "dayjs": "^1.8.16",
     "dom4": "^2.1.5",
+    "hc-offcanvas-nav": "^3.4.1",
     "intersection-observer": "^0.7.0",
     "jquery": "^3.4.1",
+    "jquery.scrollto": "^2.1.2",
     "lodash-es": "^4.17.15",
     "lozad": "^1.9.0",
+    "mustache": "^3.0.3",
     "normalize.css": "^8.0.1",
     "retinajs": "git+https://github.com/strues/retinajs.git",
+    "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.9"
   },
   "devDependencies": {
