@@ -1,0 +1,5 @@
+mixin add-svg(options)
+    - var basepath = 'svg/sprite.svg#svg--'
+
+    svg(class=options.class)
+        use(xlink:href=`${basepath}${options.icon}`)

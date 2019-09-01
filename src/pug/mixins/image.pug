@@ -1,0 +1,45 @@
+mixin add-image(options)
+    -
+        var defaults = {
+            src: null,
+            placeholder: "https://source.unsplash.com/random.jpg",
+            srcRetina: null,
+            alt: "Photo",
+            retina: false,
+            class: null,
+            nativeRetina: false,
+            lazy: false,
+            slickLazy: false,
+            attributes: {},
+            showBitrixComment: true,
+        }
+
+        options = Object.assign({}, defaults, options);
+        options.src = options.src || options.placeholder;
+
+        if (options.src && options.retina) {
+            options.filePath = options.src.substring(0, options.src.lastIndexOf("."));
+            options.fileExtension = options.src.substring(options.src.lastIndexOf(".") + 1);
+
+            if (options.retina && !options.srcRetina) {
+                options.srcRetina = `${options.filePath}@2x.${options.fileExtension}`;
+            }
+        }
+
+    if options.showBitrixComment
+        // Bitrix: change path
+    img(
+        class=options.class
+        class=options.lazy ? "lozad" : null
+        alt=options.alt
+        data-lazy= options.slickLazy ? options.src : null
+        data-src= options.lazy ? options.src : null
+        src= !(options.lazy || options.slickLazy) ? options.src : null
+    )&attributes(Object.assign(
+        {},
+        options.attributes,
+        {
+            "data-rjs": !options.nativeRetina && options.retina ? "2" : null,
+            "srcset": options.retina && options.nativeRetina ? `${options.srcRetina} 2x` : null,
+        }
+    ))

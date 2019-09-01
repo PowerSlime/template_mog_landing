@@ -1,21 +1,2 @@
-include ./mixins/bootstrap
-
-+bootstrap_scripts()
-//- Jquery
-script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-
-//- VK
-script(type="text/javascript" src="//vk.com/js/api/openapi.js?154")
-script
-	| VK.Widgets.Group("vk_groups", {mode: 4, width: "auto", height: "500"}, 150619577);
-	| VK.Widgets.CommunityMessages("vk_community_messages", 150619577, {expandTimeout: "30000",disableNewMessagesSound: "1",tooltipButtonText: "Есть вопрос?"});
-
-//- Custom scripts
-
-//- Moment.JS
-script(type="text/javascript" src="./moment.js")
-script(type="text/javascript" src="./server-date.js")
-//- How many playes, what is the cap, and rates
-script(type="text/javascript" src="./server-api-v3.js" async)
-//- Scroll to effect
-script(src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js")
+script(src="js/vendors.js" defer)
+script(src="js/bundle.js" defer)

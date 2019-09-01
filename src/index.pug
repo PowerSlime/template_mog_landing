@@ -1,26 +1,11 @@
-include ./pug/mixins
+extends ./pug/base_template
 
-doctype html
-html(lang="RU")
-	head
-		block title
-			title Magic of gods - классический сервер с 70 капом
+block variables
+    -
+        var opts = {
+            page: "- классический сервер"
+        }
 
-		block head_meta
-			include ./pug/head_meta
-
-		block head_custom_css
-			link(rel="stylesheet", href="./css/main-hmNCxGd9.min.css")
-
-
-
-	body
-		include ./pug/header
-		include ./pug/advantages
-		include ./pug/vk_group
-		include ./pug/download
-		include ./pug/server_date
-		include ./pug/footer
-
-		include ./pug/scripts
-		include ./pug/ie_fix
+block content
+    .container
+        +typography()
