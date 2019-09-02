@@ -1,117 +1,280 @@
-const gulp = require('gulp'),
-	bourbon = require('node-bourbon'),
-	browserSync = require('browser-sync').create(),
-	cleanCss = require('gulp-clean-css'),
-	imagemin = require('gulp-imagemin')
-	imageminJpegRecompress = require('imagemin-jpeg-recompress'),
-	notify = require('gulp-notify'),
-	pug = require('gulp-pug'),
-	rename = require('gulp-rename'),
-	sass = require('gulp-sass');
+const gulp = require("gulp"),
+    argv = require("yargs").argv,
+    autoprefixer = require("gulp-autoprefixer"),
+    browserSync = require("browser-sync").create(),
+    cleanCss = require("gulp-clean-css"),
+    del = require("del"),
+    gulpIf = require("gulp-if"),
+    htmlPrettify = require("gulp-html-prettify"),
+    imagemin = require("gulp-imagemin"),
+    imageminJpegRecompress = require("imagemin-jpeg-recompress"),
+    nunjucks = require("gulp-nunjucks"),
+    plumber = require("gulp-plumber"),
+    postCss = require("gulp-postcss"),
+    postCssImport = require("postcss-import"),
+    postCssLost = require("lost"),
+    postCssShort = require("postcss-short"),
+    pug = require("gulp-pug"),
+    rename = require("gulp-rename"),
+    sass = require("gulp-sass"),
+    sourcemaps = require("gulp-sourcemaps"),
+    svgSprite = require("gulp-svg-sprite"),
+    webpack = require("webpack"),
+    webpackConfig = require("./webpack.config.js"),
+    webpackStream = require("webpack-stream");
 
 
-config = {
-	dist_dir: 'dist',
-	src_dir: 'src',
-	run_on_start: ['sass', 'pug', 'move_html_to_dist', 'move_js_to_dist', 'imagemin']
-}
+// Configs
+const config = {
+    runOnBuild: [
+        "pug",
+        "nunjucks",
+        "css",
+        "js",
+        "imagemin",
+        "svg-sprite",
+        "fonts",
+        "json",
+        "xml",
+        "static_files"
+    ],
+    path: {
+        source: "src",
+        dist: "docs"  // "Docs" because it's supports by GitHub Pages
+    },
+
+    // This var is for activating the source maps
+    isDevelopment: argv.N || argv["nosourcemaps"] ? false : true,
+
+    plumber: {
+        errorHandler: console.error
+    }
+};
+
+config.postCss = {
+    plugins: [
+        postCssImport({
+            addModulesDirectories: ["node_modules"]
+        }),
+        postCssLost({
+            flexbox: "flex",
+            rounder: 100
+        }),
+        postCssShort({
+            prefix: "x"
+        }),
+    ],
+    config: null
+};
 
 
-config.images_dist = `${config.dist_dir}/img`;
-config.images_src = `${config.src_dir}/img`;
+const paths = {
+    // We are watching all files for changes but build only those
+    // which are in "build" path
+    build: {
+        css: `${config.path.source}/css/*.{sass,scss}`,
+        fonts: `${config.path.source}/fonts/**/*`,
+        img: `${config.path.source}/img/**/*`,
+        js: `${config.path.source}/js/*.js`,
+        nunjucks: `${config.path.source}/*.{njk,html}`, // For enabling IDE support look https://github.com/mozilla/nunjucks/issues/472#issuecomment-123219907
+        pug: `${config.path.source}/*.{jade,pug}`,
+        svg: `${config.path.source}/svg/*.svg`,
+        json: `${config.path.source}/**/*.json`,
+        xml: `${config.path.source}/**/*.xml`,
+        static_files: `${config.path.source}/static/**/*`,
+    },
 
+    watch: {
+        css: `${config.path.source}/**/*.{sass,scss,css}`,
+        fonts: `${config.path.source}/fonts/**/*`,
+        img: `${config.path.source}/img/**/*`,
+        js: `${config.path.source}/**/*.js`,
+        nunjucks: `${config.path.source}/**/*.{njk,html}`,
+        pug: `${config.path.source}/**/*.{jade,pug}`,
+        svg: `${config.path.source}/svg/*.svg`,
+        json: `${config.path.source}/**/*.json`,
+        xml: `${config.path.source}/**/*.xml`,
+        static_files: `${config.path.source}/static/**/*`,
+    },
 
-patterns = {
-	dist: `${config.dist_dir}/**/*`,
-	sass: `${config.src_dir}/**/*.{sass,scss}`,
-	pug: `${config.src_dir}/*.{jade,pug}`,
-	pug_files: `${config.src_dir}/**/*.{jade,pug}`,
-	html: `${config.src_dir}/*.html`,
-	js: `${config.src_dir}/**/*.js`,
-	img: `${config.images_src}/**/*`
-}
+    // Part for browser-sync plugin
+    sync: {
+        watch: `${config.path.dist}/**/*.*`,
+    }
+};
 
+// Tasks
+gulp.task("browser-sync", () => {
+    browserSync.init({
+        server: {
+            baseDir: config.path.dist,
+            // Enable directory listening
+            // Shows all files in directory that we serve
+            directory: true
+        },
 
-gulp.task('browser-sync', () => {
-	browserSync.init({
-		server: {
-			baseDir: config['dist_dir']
-		},
+        // Watch files for changes
+        watch: true,
 
-		notify: false
-	});
+        // Add HTTP access control (CORS) headers to assets served by Browsersync
+        cors: true,
+
+        // Disable opening url in browser
+        open: false,
+
+        // Disable browser-sync's notification on page
+        // As "Connected to BrowserSync", "Injected main.min.css", etc...
+        notify: false,
+
+        // Wait 0.5s before reloading the page
+        reloadDebounce: 500
+    });
+
+    // BrowserSync's watcher
+    // browserSync.watch(paths.sync.watch).on('change', browserSync.reload);
 });
 
 
-gulp.task('sass', () => {
-	return gulp.src(patterns.sass)
-		.pipe(sass({
-			outputStyle: 'compressed',
-			includePaths: bourbon.includePaths
-		}).on("error", notify.onError()))
-		.pipe(cleanCss({
-			compatibility: 'ie8',
-			level: 2
-		}))
-		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest(`${config.dist_dir}`))
-})
+gulp.task("clean", () => {
+    return del(`${config.path.dist}/**/*`);
+});
 
 
-gulp.task('pug', () => {
-	return gulp.src(patterns.pug)
-		.pipe(pug({
-			pretty: '\t'
-		}).on('error', notify.onError()))
-		.pipe(gulp.dest(`${config.dist_dir}`))
-})
+gulp.task("css", () => {
+    return gulp.src(paths.build.css, {base: config.path.source})
+        .pipe(plumber(config.plumber))
+        .pipe(gulpIf(config.isDevelopment, sourcemaps.init()))
+        .pipe(sass({
+            outputStyle: "compressed"
+        }))
+        .pipe(postCss(config.postCss.plugins, config.postCss.config))
+        .pipe(autoprefixer())
+        // Enable css minify only on production build
+        // Disabled in development mode to save CPU resources
+        .pipe(cleanCss({
+            compatibility: "ie10",
+            level: {
+                2: {
+                    all: true
+                }
+            }
+        }))
+        .pipe(rename({suffix: ".min"}))
+        .pipe(gulpIf(config.isDevelopment, sourcemaps.write(".", {includeContent: false, sourceRoot: "/src"})))
+        .pipe(gulp.dest(config.path.dist));
+});
 
 
-gulp.task('move_html_to_dist', () => {
-	return gulp.src(patterns.html)
-		.pipe(gulp.dest(`${config.dist_dir}`))
-})
+gulp.task("nunjucks", () => {
+    return gulp.src(paths.build.nunjucks, {base: config.path.source})
+        .pipe(nunjucks.compile()) // docs https://mozilla.github.io/nunjucks/
+        // .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(rename({
+            extname: ".html"
+        }))
+        .pipe(gulp.dest(config.path.dist))
+});
 
 
-gulp.task('move_js_to_dist', () => {
-	return gulp.src(patterns.js)
-		.pipe(gulp.dest(`${config.dist_dir}`))
-})
+gulp.task("pug", () => {
+    return gulp.src(paths.build.pug, {base: config.path.source})
+        .pipe(plumber(config.plumber))
+        .pipe(pug({
+            cache: true
+        }))
+        .pipe(htmlPrettify({
+            indent_char: " ",
+            indent_size: 4
+        }))
+        .pipe(gulp.dest(config.path.dist));
+});
 
 
-gulp.task('imagemin', () => {
-	return gulp.src(patterns.img)
-		.pipe(imagemin([
-			imagemin.gifsicle({interlaced: true}),
-			imagemin.jpegtran({progressive: true}),
-			imageminJpegRecompress({
-				loops: 5,
-				min: 65,
-				max: 70,
-				quality:'medium'
-			}),
-	    	imagemin.svgo(),
-	    	imagemin.optipng({optimizationLevel: 3})
-	    ]))
-		.pipe(gulp.dest(`${config.images_dist}`))
-})
+gulp.task("js", () => {
+    // In future (v4.0.0) there will be webpack handler
+    // wait a bit for it
+    return gulp.src(paths.build.js, {base: config.path.source})
+        .pipe(plumber(config.plumber))
+        .pipe(webpackStream(webpackConfig, webpack))
+        .pipe(gulp.dest(`${config.path.dist}/js/`));
+});
 
 
-gulp.task('sync', () => {
-	return gulp.src(patterns.dist)
-		.pipe(browserSync.stream());
-})
+gulp.task("imagemin", () => {
+    return gulp.src(paths.build.img, {base: config.path.source})
+        .pipe(plumber(config.plumber))
+        .pipe(imagemin([
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.jpegtran({progressive: true}),
+            imageminJpegRecompress({
+                loops: 5,
+                min: 65,
+                max: 70,
+                quality: "medium"
+            }),
+            imagemin.svgo(),
+        ]))
+        .pipe(gulp.dest(config.path.dist));
+});
 
 
-gulp.task('watch', config.run_on_start.concat(['browser-sync']), () => {
-	gulp.watch(patterns.dist, ['sync']);
-	gulp.watch(patterns.sass, ['sass']);
-	gulp.watch(patterns.pug, ['pug']);
-	gulp.watch(patterns.pug_files, ['pug'], null)
-	gulp.watch(patterns.html, ['move_html_to_dist']);
-	gulp.watch(patterns.js, ['move_js_to_dist']);
-	gulp.watch(patterns.img, ['imagemin']);
-})
+gulp.task("svg-sprite", () => {
+    return gulp.src(paths.build.svg, {base: config.path.source})
+        .pipe(plumber(config.plumber))
+        .pipe(svgSprite({
+            mode: {
+                symbol: {
+                    dest: "svg/",
+                    sprite: "sprite.svg"
+                }
+            }
+        }))
+        .pipe(gulp.dest(config.path.dist))
+});
 
-gulp.task('default', ['watch']);
-gulp.task('build', config.run_on_start)
+gulp.task("fonts", () => {
+    return gulp.src(paths.build.fonts, {base: config.path.source})
+        .pipe(gulp.dest(config.path.dist));
+});
+
+gulp.task("json", () => {
+    return gulp.src(paths.build.json, {base: config.path.source})
+        .pipe(gulp.dest(config.path.dist));
+});
+
+
+gulp.task("xml", () => {
+    return gulp.src(paths.build.xml, {base: config.path.source})
+        .pipe(gulp.dest(config.path.dist));
+});
+
+
+gulp.task("static_files", () => {
+    return gulp.src(paths.build.static_files, {base: config.path.source})
+        .pipe(gulp.dest(config.path.dist));
+});
+
+
+// Watchers
+gulp.task("watch", () => {
+    gulp.watch(paths.watch.css, gulp.series("css"));
+    gulp.watch(paths.watch.fonts, gulp.series("fonts"));
+    gulp.watch(paths.watch.img, gulp.series("imagemin"));
+    gulp.watch(paths.watch.js, gulp.series("js"));
+    gulp.watch(paths.watch.nunjucks, gulp.series("nunjucks"));
+    gulp.watch(paths.watch.pug, gulp.series("pug"));
+    gulp.watch(paths.watch.svg, gulp.series("svg-sprite"));
+    gulp.watch(paths.watch.json, gulp.series("json"));
+    gulp.watch(paths.watch.xml, gulp.series("xml"));
+    gulp.watch(paths.watch.static_files, gulp.series("static_files"));
+});
+
+
+// CLI tasks
+gulp.task("build", gulp.series("clean", gulp.parallel(...config.runOnBuild)));
+gulp.task("default", config.isDevelopment ? gulp.series("build", gulp.parallel("watch", "browser-sync")) : gulp.series("build"));
+
+
+module.exports = {
+    config: config
+};

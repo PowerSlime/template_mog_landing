@@ -1,0 +1,41 @@
+include mixins/image
+include mixins/svg-sprite
+include mixins/typography
+
+doctype html
+
+block variables-init
+    -
+        // use `opts` var to overwrite the options
+        var defaults = {
+            sitename: "Magic of Gods",
+            page: ""
+        };
+
+block variables
+    //- use `opts` var to overwrite the options
+
+block variables-calculated
+    - var options = Object.assign(defaults, opts)
+
+html(lang="RU")
+    head
+        block title
+            title= `${options.sitename} ${options.page}`.trim()
+
+        block head_meta
+            include ./head_meta
+
+        block head_custom_css
+            link(rel="stylesheet", href="./css/main.min.css")
+
+
+    body
+        section.content
+            block content
+
+        footer.footer
+            include ./common/footer
+
+        include ./scripts
+        block custom_scripts
