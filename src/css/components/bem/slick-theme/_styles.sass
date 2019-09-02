@@ -1,0 +1,40 @@
+.slick-dots
+    display: flex
+    flex-wrap: wrap
+    list-style: none
+    padding: 0
+    margin: 0
+
+    li
+        position: relative
+
+        width: 13px
+        height: 13px
+
+        cursor: pointer
+        user-select: none
+
+        &.slick-active
+            &:before
+                background-color: $color-white
+
+        &:hover
+            &:before
+                border-color: $color-white
+
+        &:before
+            content: ""
+            position: absolute
+            top: 50%
+            left: 50%
+
+            width: 8px
+            height: 8px
+            border: 1px solid rgba($color-white, .5)
+            background-color: transparent
+
+            transform: translate(-50%, -50%)
+            transition: $transition-duration
+
+        button
+            display: none

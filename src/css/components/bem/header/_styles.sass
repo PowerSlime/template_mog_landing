@@ -1,0 +1,51 @@
+.header-wrapper
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+
+    z-index: 2000
+
+    color: $color-white
+    padding: 13px 0
+
+    transition-property: background
+    transition-duration: $transition-duration
+
+    &:before
+        content: ""
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(7, 7, 7, 0) 100%, rgba(33, 33, 33, 0) 100%)
+
+        transition-property: opacity, box-shadow
+        transition-duration: $transition-duration
+
+    &.active
+        background: $color-white
+        color: $color-dark
+
+        box-shadow: 0 2px 5px rgba(#000, .25)
+
+        &:before
+            opacity: 0
+
+    a
+        color: currentColor
+
+        transition-property: color
+        transition-duration: $transition-duration
+
+        &:hover,
+        &:active
+            color: $color-light-blue
+            text-decoration: none
+
+    .logo-link
+        color: currentColor
+
+        .logo
+            fill: currentColor

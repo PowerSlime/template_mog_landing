@@ -28,9 +28,9 @@ $fonts: (
     ("Montserrat", "Regular", 400, normal),
     ("Montserrat", "Italic", 400, italic),
     ("Montserrat", "Medium", 500, normal),
-    ("Montserrat", "MediumItalic", 500, normal),
+    ("Montserrat", "MediumItalic", 500, italic),
     ("Montserrat", "Bold", 700, normal),
-    ("Montserrat", "BoldItalic", 700, normal),
+    ("Montserrat", "BoldItalic", 700, italic),
 );
 
 @mixin getFontLinks($font, $style) {
