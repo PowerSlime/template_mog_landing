@@ -3,6 +3,7 @@ export default function mainGallery() {
         const $this = $(this);
 
         $this.slick({
+            adaptiveHeight: true,
             arrows: false,
             slidesToShow: 1,
             slidesToScroll: 1,

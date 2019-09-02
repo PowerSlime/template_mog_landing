@@ -1,6 +1,9 @@
 .stats-wrapper
     padding: 30px 0
 
+    @media screen and (max-width: 1023px)
+        padding: 15px 0
+
 .stats-block
     display: flex
     flex-direction: column
@@ -18,8 +21,14 @@
         font-size: 48px
         font-weight: 700
 
+        @media screen and (max-width: 1023px)
+            font-size: 40px
+
     & &-header
         margin: -15px 0 -13px
+
+        @media screen and (max-width: 1023px)
+            margin: -10px 0 -13px
 
     &-description
         color: $color-dark-gray

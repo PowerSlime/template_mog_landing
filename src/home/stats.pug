@@ -2,19 +2,19 @@
     .container.stats-container
         .row.stats-row.js-init--stats
             | {{#stats}}
-            .col-md-3
+            .col-md-3.col-12.col-sm-6
                 .stats-block
                     .stats-block-header {{header}}
                     .stats-block-description {{description}}
             | {{/stats}}
             | {{#error}}
-            .col-9
+            .col-md-9.col-12.col-sm-6
                 .stats-block
                     .stats-block-header {{header}}
                     .stats-block-description {{description}}
             | {{/error}}
             | {{#date}}
-            .col-md-3.ml-auto
+            .col-md-3.ml-auto.col-12.col-sm-6
                 .stats-block.stats-block--date
                     .stats-block-header {{header}}
                     .stats-block-description {{description}}

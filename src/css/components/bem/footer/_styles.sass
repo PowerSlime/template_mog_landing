@@ -1,8 +1,26 @@
 .footer
     background-color: $color-dark
     padding: 12px 0
+    color: $color-light-gray
+
+    a
+        color: currentColor
+
+        transition-property: color
+        transition-duration: $transition-duration
+
+        &:hover,
+        &:active
+            color: $color-light-blue
+            text-decoration: none
+
+    .logo-link
+        @media screen and (max-width: 767px)
+            margin: 5px auto 0
 
     &-disclaimer
-        color: $color-light-gray
         font-size: 10px
         font-weight: $font-weight-regular
+
+        @media screen and (max-width: 767px)
+            text-align: center

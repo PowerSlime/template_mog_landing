@@ -31,13 +31,15 @@
     <header class="header" id="header">
         <div class="header-wrapper js-init--header">
             <div class="container header-container">
-                <div class="row align-items-center">
+                <div class="row align-items-center header-row">
                     <div class="col-6 col-md-1">
-                        <a class="logo-link" href="#header">
-                            <svg class="logo logo--header">
-                                <use xlink:href="svg/sprite.svg#svg--logo"></use>
-                            </svg>
-                        </a>
+                        <div class="logo-wrapper">
+                            <a class="logo-link" href="#header">
+                                <svg class="logo logo--header">
+                                    <use xlink:href="svg/sprite.svg#svg--logo"></use>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                     <div class="col-6 col-md-7 ml-auto">
                         <nav class="nav" id="main-nav">
@@ -68,11 +70,11 @@
                 <div class="main-gallery js-init--main-gallery">
                     <div class="container main-gallery-item-container">
                         <div class="row main-gallery-item align-items-center">
-                            <div class="col-md-4">
+                            <div class="col-lg-5 order-1 order-lg-0">
                                 <h2 class="main-gallery-item-header">Мировые боссы!</h2>
                                 <div class="main-gallery-item-description">Ходите на них с 75 уровня каждый день в 19:00 по мск. и получайте плюшки</div><a class="main-gallery-item-play" href="#howtoplay">Начать игру</a>
                             </div>
-                            <div class="col-md-8 main-gallery-item-photo-container">
+                            <div class="main-gallery-item-photo-container col-lg-7 col-12">
                                 <div class="main-gallery-item-photo main-gallery-item-photo--1">
                                     <img alt="Photo" src="static/image-1.png" />
                                 </div>
@@ -81,11 +83,11 @@
                     </div>
                     <div class="container main-gallery-item-container">
                         <div class="row main-gallery-item align-items-center">
-                            <div class="col-md-4">
+                            <div class="col-lg-5 order-1 order-lg-0">
                                 <h2 class="main-gallery-item-header">Алмазы за инвенты!</h2>
                                 <div class="main-gallery-item-description">Выполняйте ивенты на мосту Варанаса и зарабатывайте алмазы</div><a class="main-gallery-item-play" href="#howtoplay">Начать игру</a>
                             </div>
-                            <div class="col-md-8 main-gallery-item-photo-container">
+                            <div class="main-gallery-item-photo-container col-lg-7 col-12">
                                 <div class="main-gallery-item-photo main-gallery-item-photo--2">
                                     <img alt="Photo" src="static/image-2.png" />
                                 </div>
@@ -94,11 +96,11 @@
                     </div>
                     <div class="container main-gallery-item-container">
                         <div class="row main-gallery-item align-items-center">
-                            <div class="col-md-4">
+                            <div class="col-lg-5 order-1 order-lg-0">
                                 <h2 class="main-gallery-item-header">Ежедневные подарки!</h2>
                                 <div class="main-gallery-item-description">Выполняйте ивенты на мосту Варанаса и зарабатывайте алмазы</div><a class="main-gallery-item-play" href="#howtoplay">Начать игру</a>
                             </div>
-                            <div class="col-md-8 main-gallery-item-photo-container">
+                            <div class="main-gallery-item-photo-container col-lg-7 col-12">
                                 <div class="main-gallery-item-photo main-gallery-item-photo--3">
                                     <img alt="Photo" src="static/image-3.png" />
                                 </div>
@@ -107,11 +109,11 @@
                     </div>
                     <div class="container main-gallery-item-container">
                         <div class="row main-gallery-item align-items-center">
-                            <div class="col-md-4">
+                            <div class="col-lg-5 order-1 order-lg-0">
                                 <h2 class="main-gallery-item-header">Уникальные ивенты!</h2>
                                 <div class="main-gallery-item-description">Уникальные ивенты сервера: Алмазная лихорадка, Печать стихий и многие другие!</div><a class="main-gallery-item-play" href="#howtoplay">Начать игру</a>
                             </div>
-                            <div class="col-md-8 main-gallery-item-photo-container">
+                            <div class="main-gallery-item-photo-container col-lg-7 col-12">
                                 <div class="main-gallery-item-photo main-gallery-item-photo--4">
                                     <img alt="Photo" src="static/image-4.png" />
                                 </div>
@@ -124,19 +126,19 @@
         <div class="stats-wrapper">
             <div class="container stats-container">
                 <div class="row stats-row js-init--stats">{{#stats}}
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-12 col-sm-6">
                         <div class="stats-block">
                             <div class="stats-block-header">{{header}}</div>
                             <div class="stats-block-description">{{description}}</div>
                         </div>
                     </div>{{/stats}} {{#error}}
-                    <div class="col-9">
+                    <div class="col-md-9 col-12 col-sm-6">
                         <div class="stats-block">
                             <div class="stats-block-header">{{header}}</div>
                             <div class="stats-block-description">{{description}}</div>
                         </div>
                     </div>{{/error}} {{#date}}
-                    <div class="col-md-3 ml-auto">
+                    <div class="col-md-3 ml-auto col-12 col-sm-6">
                         <div class="stats-block stats-block--date">
                             <div class="stats-block-header">{{header}}</div>
                             <div class="stats-block-description">{{description}}</div>
@@ -160,7 +162,7 @@
                             </a>
                             <div class="howtoplay-step-description">Скачайте клиент <em>(~13Gb)</em> 
                                 <br>
-                                <a href="" target="_blank">Torrent</a>, <a href="" target="_blank">Google Drive</a>
+                                <a href="https://magicofgods.ru/Magic_of_Gods.torrent" target="_blank">Torrent</a>, <a href="https://drive.google.com/file/d/1AKYBJKj1L8tuWmXHXYMulfTSN2NTrkKu/view?" target="_blank">Google Drive</a>
                             </div>
                         </div>
                     </div>
@@ -170,7 +172,7 @@
                             <a class="howtoplay-step-photo" href="static/step-2.jpg" data-fancybox="steps">
                                 <img alt="Photo" src="static/step-2.jpg" />
                             </a>
-                            <div class="howtoplay-step-description"><a href="" target="_blank">Зарегистрируйтесь</a> и подтвердите учетную запись.
+                            <div class="howtoplay-step-description"><a href="https://forum.magicofgods.ru/index.php?register/" target="_blank">Зарегистрируйтесь</a> и подтвердите учетную запись.
                             </div>
                         </div>
                     </div>
@@ -272,6 +274,7 @@
                 </div>
             </div>
         </div>
+        <div id="vk_community_messages"></div>
     </section>
     <footer class="footer">
         <div class="container">
@@ -283,11 +286,13 @@
                     </div>
                 </div>
                 <div class="col-md-1 ml-auto">
-                    <a class="logo-link" href="#header">
-                        <svg class="logo logo--header">
-                            <use xlink:href="svg/sprite.svg#svg--logo"></use>
-                        </svg>
-                    </a>
+                    <div class="logo-wrapper">
+                        <a class="logo-link" href="#header">
+                            <svg class="logo logo--footer">
+                                <use xlink:href="svg/sprite.svg#svg--logo"></use>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

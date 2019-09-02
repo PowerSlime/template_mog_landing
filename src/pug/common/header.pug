@@ -1,9 +1,10 @@
 .header-wrapper.js-init--header
     .container.header-container
-        .row.align-items-center
+        .row.align-items-center.header-row
             .col-6.col-md-1
-                a(href="#header").logo-link
-                    +add-svg({class: "logo logo--header", icon: "logo"})
+                .logo-wrapper
+                    a(href="#header").logo-link
+                        +add-svg({class: "logo logo--header", icon: "logo"})
 
             .col-6.col-md-7.ml-auto
                 nav.nav#main-nav
