@@ -9,7 +9,7 @@
     "Уникальные ивенты сервера: Алмазная лихорадка, Печать стихий и многие другие!": "Unique server events: Diamond Rush, Seal of the Elements and many others!",
     "Начать игру": "Start the game",
     "Мировые боссы!": "World bosses!",
-    "мировые боссы desc": "world bosses desc",
+    "мировые боссы desc": "Participate in World Bosses event (85 lvl requirement) everyday at 19:00 (GMT+3) to get bonus rewards",
     "Алмазы за ивенты!": "Diamonds for events!",
     "Выполняйте ивенты на мосту Варанаса и зарабатывайте алмазы": "Complete events on the Varanas bridge and earn diamonds",
     "Ежедневные подарки!": "Daily gifts!",
@@ -53,5 +53,6 @@
     "Произошла ошибка": "An error has occurred",
     "В данный момент мы не можем получить данные с сервера.": "We are currently unable to receive data from the server.",
     "Сегодня": "Today",
-    "открытие сервера": "server opening"
+    "открытие сервера": "server opening",
+    "Discord": "Discord"
 }
