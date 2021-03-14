@@ -20,17 +20,17 @@ function getBirthday(i18n) {
     const serverBirthday = dayjs(SERVER_BIRTHDAY, "DD/MM/YYYY");
     const days = dayjs().diff(serverBirthday, "day");
 
-    const daysText = i18n.t("день", {smart_count: Math.abs(days)});
+    const absDays = Math.abs(days);
 
     if (days < 0) {
         return {
-            header: days * -1,
-            description: `${daysText} до открытия`,
+            header: absDays,
+            description: i18n.t(`stats.days_before_open`, { smart_count: absDays }),
         };
     } else if (days > 0) {
         return {
             header: days,
-            description: `${daysText} с открытия`,
+            description: i18n.t(`stats.days_from_open`, { smart_count: absDays }),
         };
     } else {
         return {
@@ -48,6 +48,7 @@ export default async function stats() {
         const state = {
             date: getBirthday(i18n),
         };
+        let lastResponse = {};
 
         const template = container.innerHTML;
         Mustache.parse(template);
@@ -56,7 +57,21 @@ export default async function stats() {
             container.innerHTML = Mustache.render(template, state);
         }
 
+        function formatResponse(response) {
+            return [
+                {header: response.cap, description: i18n.t("кап")},
+                {header: response.online, description: i18n.t("игрок", {smart_count: response.online})},
+                {header: response.rates, description: i18n.t("рейты")},
+            ];
+        }
+
         render();
+        i18n.on('languageChanged', () => {
+            state.date = getBirthday(i18n);
+            state.stats = formatResponse(lastResponse);
+            render();
+        });
+
         getStats((response, success) => {
             delete state.stats;
             let data;
@@ -68,16 +83,13 @@ export default async function stats() {
 
             if (success && data.is_online) {
                 const response = data.response;
-                state.stats = [
-                    {header: response.cap, description: i18n.t("кап")},
-                    {header: response.online, description: i18n.t("игрок", {smart_count: response.online})},
-                    {header: response.rates, description: i18n.t("рейты")},
-                ];
+                lastResponse = response;
+                state.stats = formatResponse(response);
                 render();
             } else {
                 state.error = {
                     header: i18n.t("Произошла ошибка"),
-                    description: i18n.t("В данный момент мы не можем получить данные с сервера."),
+                    description: i18n.t("В данный момент мы не можем получить данные с сервера"),
                 };
                 render();
             }
