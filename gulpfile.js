@@ -23,6 +23,7 @@ const gulp = require("gulp"),
     webpackConfig = require("./webpack.config.js"),
     webpackStream = require("webpack-stream");
 
+sass.compiler = require('node-sass');
 
 // Configs
 const config = {
