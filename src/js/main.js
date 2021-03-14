@@ -19,6 +19,7 @@ import mainGallery from "./components/main-gallery";
 import featuresGallery from "./components/features-gallery";
 import smoothScroll from "./components/smooth-scroll";
 import header from "./components/header";
+import languageSwitcher from "./components/language-switcher";
 
 svgPolyfill();
 
@@ -30,4 +31,5 @@ $(document).ready(function () {
     mainGallery();
     featuresGallery();
     smoothScroll();
+    languageSwitcher();
 });

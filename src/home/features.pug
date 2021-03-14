@@ -2,8 +2,8 @@ mixin add-feature(image, header, description)
     .feature
         .feature-image
             +add-image({src: image})
-        .feature-header= header
-        .feature-description= description
+        .feature-header(data-i18n=header)= header
+        .feature-description(data-i18n=description)= description
 
 .features-wrapper#features
     .container.features-container

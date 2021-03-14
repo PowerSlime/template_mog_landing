@@ -21,7 +21,7 @@ block variables-calculated
 html(lang="RU")
     head
         block title
-            title= `${options.sitename} ${options.page}`.trim()
+            title(data-i18n=`${options.sitename} ${options.page}`.trim())= `${options.sitename} ${options.page}`.trim()
 
         block head_meta
             include ./head_meta

@@ -1,13 +1,8 @@
 import Mustache from "mustache";
 import dayjs from "dayjs";
+import {i18nInstance} from "./_common/i18n-instance";
 
 const SERVER_BIRTHDAY = "2018-05-27";
-
-// Склонение числительных
-function declOfNum(number, titles) {
-    const cases = [2, 0, 1, 1, 1, 2];
-    return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
-}
 
 function getStats(callback) {
     const serverApiLink = "https://host.magicofgods.ru";
@@ -15,40 +10,43 @@ function getStats(callback) {
 
     $.ajax({
         url: `${serverApiLink}${serverApiPath}`,
-        timeout: 30000
+        timeout: 30000,
     })
         .done(data => callback(data, true))
         .fail(data => callback(data, false));
 }
 
-function getBirthday() {
+function getBirthday(i18n) {
     const serverBirthday = dayjs(SERVER_BIRTHDAY, "DD/MM/YYYY");
-    const days = dayjs().diff(serverBirthday, "days");
-    const words = ['день', 'дня', 'дней'];
+    const days = dayjs().diff(serverBirthday, "day");
+
+    const daysText = i18n.t("день", {smart_count: Math.abs(days)});
 
     if (days < 0) {
         return {
             header: days * -1,
-            description: `${declOfNum(days * -1, words)} до открытия`
-        }
+            description: `${daysText} до открытия`,
+        };
     } else if (days > 0) {
         return {
             header: days,
-            description: `${declOfNum(days, words)} с открытия`
-        }
+            description: `${daysText} с открытия`,
+        };
     } else {
         return {
-            header: "Сегодня",
-            description: `открытие сервера`
-        }
+            header: i18n.t("Сегодня"),
+            description: i18n.t(`открытие сервера`),
+        };
     }
 }
 
-export default function stats() {
+export default async function stats() {
+    const i18n = await i18nInstance;
+
     const stats = document.querySelectorAll(".js-init--stats");
     stats.forEach(container => {
         const state = {
-            date: getBirthday(),
+            date: getBirthday(i18n),
         };
 
         const template = container.innerHTML;
@@ -71,15 +69,15 @@ export default function stats() {
             if (success && data.is_online) {
                 const response = data.response;
                 state.stats = [
-                        {header: response.cap, description: "кап"},
-                        {header: response.online, description: declOfNum(response.online, ["игрок", "игрока", "игроков"])},
-                        {header: response.rates, description: "рейты"},
+                    {header: response.cap, description: i18n.t("кап")},
+                    {header: response.online, description: i18n.t("игрок", {smart_count: response.online})},
+                    {header: response.rates, description: i18n.t("рейты")},
                 ];
-                render()
+                render();
             } else {
                 state.error = {
-                    header: "Произошла ошибка",
-                    description: "В данный момент мы не можем получить данные с сервера."
+                    header: i18n.t("Произошла ошибка"),
+                    description: i18n.t("В данный момент мы не можем получить данные с сервера."),
                 };
                 render();
             }

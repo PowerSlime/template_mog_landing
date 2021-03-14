@@ -2,7 +2,7 @@
 <html lang="RU">
 
 <head>
-    <title>Magic of Gods - классический сервер</title>
+    <title data-i18n="Magic of Gods - классический сервер">Magic of Gods - классический сервер</title>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="static/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -41,21 +41,27 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-7 ml-auto">
+                    <div class="col-6 col-md-8 ml-auto nav-container d-flex justify-content-end align-items-center">
                         <nav class="nav" id="main-nav">
                             <ul class="nav-list">
-                                <li><a href="https://magicofgods.ru/">Новости</a>
+                                <li><a href="https://magicofgods.ru/" data-i18n="Новости">Новости</a>
                                 </li>
-                                <li><a href="#howtoplay">Скачать</a>
+                                <li><a href="#howtoplay" data-i18n="Скачать">Скачать</a>
                                 </li>
-                                <li><a href="#features">Преимущества</a>
+                                <li><a href="#features" data-i18n="Преимущества">Преимущества</a>
                                 </li>
-                                <li><a href="https://forum.magicofgods.ru/index.php?threads/%D0%A0%D0%B5%D1%84%D0%B5%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0.9/">Реферальная система</a>
+                                <li><a href="https://forum.magicofgods.ru/index.php?threads/%D0%A0%D0%B5%D1%84%D0%B5%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0.9/" data-i18n="Реферальная система">Реферальная система</a>
                                 </li>
-                                <li><a href="https://vk.com/magicofgods">Мы в ВК</a>
+                                <li><a href="https://vk.com/magicofgods" data-i18n="Мы в ВК">Мы в ВК</a>
                                 </li>
                             </ul>
                         </nav>
+                        <div class="language-switcher-container ml-4">
+                            <select class="language-switcher js-init--language-switcher">
+                                <option value="ru">Русский</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,8 +77,8 @@
                     <div class="container main-gallery-item-container">
                         <div class="row main-gallery-item align-items-center">
                             <div class="col-lg-5 order-1 order-lg-0">
-                                <h2 class="main-gallery-item-header">Мировые боссы!</h2>
-                                <div class="main-gallery-item-description">Ходите на них с 75 уровня каждый день в 19:00 по мск. и получайте плюшки</div><a class="main-gallery-item-play" href="#howtoplay">Начать игру</a>
+                                <h2 class="main-gallery-item-header" data-i18n="Мировые боссы!">Мировые боссы!</h2>
+                                <div class="main-gallery-item-description" data-i18n="мировые боссы desc">Ходите на них с 75 уровня каждый день в 19:00 по мск. и получайте плюшки</div><a class="main-gallery-item-play" href="#howtoplay" data-i18n="Начать игру">Начать игру</a>
                             </div>
                             <div class="main-gallery-item-photo-container col-lg-7 col-12">
                                 <div class="main-gallery-item-photo main-gallery-item-photo--1">
@@ -84,8 +90,8 @@
                     <div class="container main-gallery-item-container">
                         <div class="row main-gallery-item align-items-center">
                             <div class="col-lg-5 order-1 order-lg-0">
-                                <h2 class="main-gallery-item-header">Алмазы за ивенты!</h2>
-                                <div class="main-gallery-item-description">Выполняйте ивенты на мосту Варанаса и зарабатывайте алмазы</div><a class="main-gallery-item-play" href="#howtoplay">Начать игру</a>
+                                <h2 class="main-gallery-item-header" data-i18n="Алмазы за ивенты!">Алмазы за ивенты!</h2>
+                                <div class="main-gallery-item-description" data-i18n="Выполняйте ивенты на мосту Варанаса и зарабатывайте алмазы">Выполняйте ивенты на мосту Варанаса и зарабатывайте алмазы</div><a class="main-gallery-item-play" href="#howtoplay" data-i18n="Начать игру">Начать игру</a>
                             </div>
                             <div class="main-gallery-item-photo-container col-lg-7 col-12">
                                 <div class="main-gallery-item-photo main-gallery-item-photo--2">
@@ -97,8 +103,8 @@
                     <div class="container main-gallery-item-container">
                         <div class="row main-gallery-item align-items-center">
                             <div class="col-lg-5 order-1 order-lg-0">
-                                <h2 class="main-gallery-item-header">Ежедневные подарки!</h2>
-                                <div class="main-gallery-item-description">Ежедневно проводите 1 час в игре и получайте за это подарки!</div><a class="main-gallery-item-play" href="#howtoplay">Начать игру</a>
+                                <h2 class="main-gallery-item-header" data-i18n="Ежедневные подарки!">Ежедневные подарки!</h2>
+                                <div class="main-gallery-item-description" data-i18n="Ежедневно проводите 1 час в игре и получайте за это подарки!">Ежедневно проводите 1 час в игре и получайте за это подарки!</div><a class="main-gallery-item-play" href="#howtoplay" data-i18n="Начать игру">Начать игру</a>
                             </div>
                             <div class="main-gallery-item-photo-container col-lg-7 col-12">
                                 <div class="main-gallery-item-photo main-gallery-item-photo--3">
@@ -110,8 +116,8 @@
                     <div class="container main-gallery-item-container">
                         <div class="row main-gallery-item align-items-center">
                             <div class="col-lg-5 order-1 order-lg-0">
-                                <h2 class="main-gallery-item-header">Уникальные ивенты!</h2>
-                                <div class="main-gallery-item-description">Уникальные ивенты сервера: Алмазная лихорадка, Печать стихий и многие другие!</div><a class="main-gallery-item-play" href="#howtoplay">Начать игру</a>
+                                <h2 class="main-gallery-item-header" data-i18n="Уникальные ивенты!">Уникальные ивенты!</h2>
+                                <div class="main-gallery-item-description" data-i18n="Уникальные ивенты сервера: Алмазная лихорадка, Печать стихий и многие другие!">Уникальные ивенты сервера: Алмазная лихорадка, Печать стихий и многие другие!</div><a class="main-gallery-item-play" href="#howtoplay" data-i18n="Начать игру">Начать игру</a>
                             </div>
                             <div class="main-gallery-item-photo-container col-lg-7 col-12">
                                 <div class="main-gallery-item-photo main-gallery-item-photo--4">
@@ -150,39 +156,39 @@
             <div class="container howtoplay-container">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="howtoplay-header">Как начать играть</h2>
+                        <h2 class="howtoplay-header" data-i18n="Как начать играть">Как начать играть</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="howtoplay-step">
-                            <h3 class="howtoplay-step-header">Шаг 1</h3>
+                            <h3 class="howtoplay-step-header" data-i18n="Шаг 1">Шаг 1</h3>
                             <a class="howtoplay-step-photo" href="static/step-1.jpg" data-fancybox="steps">
                                 <img alt="Photo" src="static/step-1.jpg" />
                             </a>
-                            <div class="howtoplay-step-description">Скачайте клиент <em>(~13Gb)</em> 
+                            <div class="howtoplay-step-description"><span data-i18n="Скачайте клиент">Скачайте клиент</span>  <em>(~13Gb)</em> 
                                 <br>
-                                <a href="https://magicofgods.ru/Magic_of_Gods.torrent" target="_blank">Torrent</a>, <a href="https://drive.google.com/file/d/1AKYBJKj1L8tuWmXHXYMulfTSN2NTrkKu/view?" target="_blank">Google Drive</a>
+                                <a href="https://magicofgods.ru/Magic_of_Gods.torrent" target="_blank" data-i18n="Torrent">Torrent</a>, <a href="https://drive.google.com/file/d/1AKYBJKj1L8tuWmXHXYMulfTSN2NTrkKu/view?" target="_blank" data-i18n="Google Drive">Google Drive</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="howtoplay-step">
-                            <h3 class="howtoplay-step-header">Шаг 2</h3>
+                            <h3 class="howtoplay-step-header" data-i18n="Шаг 2">Шаг 2</h3>
                             <a class="howtoplay-step-photo" href="static/step-2.jpg" data-fancybox="steps">
                                 <img alt="Photo" src="static/step-2.jpg" />
                             </a>
-                            <div class="howtoplay-step-description"><a href="https://forum.magicofgods.ru/index.php?register/" target="_blank">Зарегистрируйтесь</a> и подтвердите учетную запись.
+                            <div class="howtoplay-step-description"><a href="https://forum.magicofgods.ru/index.php?register/" target="_blank" data-i18n="Зарегистрируйтесь">Зарегистрируйтесь</a>  <span data-i18n="и подтвердите учетную запись.">и подтвердите учетную запись.</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="howtoplay-step">
-                            <h3 class="howtoplay-step-header">Шаг 3</h3>
+                            <h3 class="howtoplay-step-header" data-i18n="Шаг 3">Шаг 3</h3>
                             <a class="howtoplay-step-photo" href="static/step-3.jpg" data-fancybox="steps">
                                 <img alt="Photo" src="static/step-3.jpg" />
                             </a>
-                            <div class="howtoplay-step-description">Запустите лаунчер и начните играть</div>
+                            <div class="howtoplay-step-description" data-i18n="Запустите лаунчер и начните играть">Запустите лаунчер и начните играть</div>
                         </div>
                     </div>
                 </div>
@@ -197,64 +203,64 @@
                                 <div class="feature-image">
                                     <img alt="Photo" src="static/features/item-1.png" />
                                 </div>
-                                <div class="feature-header">Заработок алмазов</div>
-                                <div class="feature-description">Огромное количество способов заработка алмазов. От выполнения квестов до убийства боссов.</div>
+                                <div class="feature-header" data-i18n="Заработок алмазов">Заработок алмазов</div>
+                                <div class="feature-description" data-i18n="Огромное количество способов заработка алмазов. От выполнения квестов до убийства боссов.">Огромное количество способов заработка алмазов. От выполнения квестов до убийства боссов.</div>
                             </div>
                             <div class="feature">
                                 <div class="feature-image">
                                     <img alt="Photo" src="static/features/item-2.png" />
                                 </div>
-                                <div class="feature-header">Система классов</div>
-                                <div class="feature-description">Стандартная система классов, но с исправлением неиграбельных связок</div>
+                                <div class="feature-header" data-i18n="Система классов">Система классов</div>
+                                <div class="feature-description" data-i18n="Стандартная система классов, но с исправлением неиграбельных связок">Стандартная система классов, но с исправлением неиграбельных связок</div>
                             </div>
                             <div class="feature">
                                 <div class="feature-image">
                                     <img alt="Photo" src="static/features/item-3.png" />
                                 </div>
-                                <div class="feature-header">Карты монстров</div>
-                                <div class="feature-description">Улучшены карты монстров, добавлены новые с боссов, добавлен обмен карт на алмазы.</div>
+                                <div class="feature-header" data-i18n="Карты монстров">Карты монстров</div>
+                                <div class="feature-description" data-i18n="Улучшены карты монстров, добавлены новые с боссов, добавлен обмен карт на алмазы.">Улучшены карты монстров, добавлены новые с боссов, добавлен обмен карт на алмазы.</div>
                             </div>
                             <div class="feature">
                                 <div class="feature-image">
                                     <img alt="Photo" src="static/features/item-4.png" />
                                 </div>
-                                <div class="feature-header">Система отношений</div>
-                                <div class="feature-description">Усилены бафы от отношений. Отношения качаются в разы быстрее, чем в оригинале.</div>
+                                <div class="feature-header" data-i18n="Система отношений">Система отношений</div>
+                                <div class="feature-description" data-i18n="Усилены бафы от отношений. Отношения качаются в разы быстрее, чем в оригинале.">Усилены бафы от отношений. Отношения качаются в разы быстрее, чем в оригинале.</div>
                             </div>
                             <div class="feature">
                                 <div class="feature-image">
                                     <img alt="Photo" src="static/features/item-5.png" />
                                 </div>
-                                <div class="feature-header">Бафы гильдии</div>
-                                <div class="feature-description">Улучшены бафы гильдии.</div>
+                                <div class="feature-header" data-i18n="Бафы гильдии">Бафы гильдии</div>
+                                <div class="feature-description" data-i18n="Улучшены бафы гильдии.">Улучшены бафы гильдии.</div>
                             </div>
                             <div class="feature">
                                 <div class="feature-image">
                                     <img alt="Photo" src="static/features/item-6.png" />
                                 </div>
-                                <div class="feature-header">Система PVP</div>
-                                <div class="feature-description">Измененная система PVP , больше нет ваншотов и добавлена система репутации!</div>
+                                <div class="feature-header" data-i18n="Система PVP">Система PVP</div>
+                                <div class="feature-description" data-i18n="Измененная система PVP , больше нет ваншотов и добавлена система репутации!">Измененная система PVP , больше нет ваншотов и добавлена система репутации!</div>
                             </div>
                             <div class="feature">
                                 <div class="feature-image">
                                     <img alt="Photo" src="static/features/item-7.png" />
                                 </div>
-                                <div class="feature-header">Лимит бафов</div>
-                                <div class="feature-description">Увеличен лимит бафов до 100.</div>
+                                <div class="feature-header" data-i18n="Лимит бафов">Лимит бафов</div>
+                                <div class="feature-description" data-i18n="Увеличен лимит бафов до 100.">Увеличен лимит бафов до 100.</div>
                             </div>
                             <div class="feature">
                                 <div class="feature-image">
                                     <img alt="Photo" src="static/features/item-8.png" />
                                 </div>
-                                <div class="feature-header">Талант</div>
-                                <div class="feature-description">Страна грез, в которой очень быстро и легко фармится талант.</div>
+                                <div class="feature-header" data-i18n="Талант">Талант</div>
+                                <div class="feature-description" data-i18n="Страна грез, в которой очень быстро и легко фармится талант.">Страна грез, в которой очень быстро и легко фармится талант.</div>
                             </div>
                             <div class="feature">
                                 <div class="feature-image">
                                     <img alt="Photo" src="static/features/item-9.png" />
                                 </div>
-                                <div class="feature-header">х2 лут</div>
-                                <div class="feature-description">Возможность получать х2 лут с боссов, имея при себе Шапку санты.</div>
+                                <div class="feature-header" data-i18n="х2 лут">х2 лут</div>
+                                <div class="feature-description" data-i18n="Возможность получать х2 лут с боссов, имея при себе Шапку санты.">Возможность получать х2 лут с боссов, имея при себе Шапку санты.</div>
                             </div>
                         </div>
                     </div>
@@ -265,8 +271,8 @@
             <div class="container news-container">
                 <div class="row align-items-center">
                     <div class="col-md-7">
-                        <div class="news-header">Следи за новостями сервера!</div>
-                        <div class="news-description">В группе публикуются самые последние изменения о сервере. Описание обновлений, изменений, нововведений и конкурсов. Успей первым увидеть все самое новое!</div>
+                        <div class="news-header" data-i18n="Следи за новостями сервера!">Следи за новостями сервера!</div>
+                        <div class="news-description" data-i18n="В группе публикуются самые последние изменения о сервере. Описание обновлений, изменений, нововведений и конкурсов. Успей первым увидеть все самое новое!">В группе публикуются самые последние изменения о сервере. Описание обновлений, изменений, нововведений и конкурсов. Успей первым увидеть все самое новое!</div>
                     </div>
                     <div class="col-md-4 ml-auto mt-4 mt-md-0">
                         <div id="vk-news"></div>
@@ -280,9 +286,10 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <div class="footer-disclaimer"><span>Magic of gods © 2019 Бесплатный русский приватный сервер игры Runes Of Magic (Руны Магии) <br>
-Сервер предоставляется лишь в качестве ознакомительного и является неофициальным.
-</span>
+                    <div class="footer-disclaimer"><span><span data-i18n="Magic of gods © 2019 Бесплатный русский приватный сервер игры Runes Of Magic (Руны Магии)">Magic of gods © 2019 Бесплатный русский приватный сервер игры Runes Of Magic (Руны Магии)</span> 
+                        <br>
+                        <span data-i18n="Сервер предоставляется лишь в качестве ознакомительного и является неофициальным.">Сервер предоставляется лишь в качестве ознакомительного и является неофициальным.</span>
+                        </span>
                     </div>
                 </div>
                 <div class="col-md-1 ml-auto">
