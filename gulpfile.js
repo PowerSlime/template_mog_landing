@@ -35,7 +35,6 @@ const config = {
         "imagemin",
         "svg-sprite",
         "fonts",
-        "json",
         "xml",
         "static_files"
     ],
@@ -80,7 +79,6 @@ const paths = {
         nunjucks: `${config.path.source}/*.{njk,html}`, // For enabling IDE support look https://github.com/mozilla/nunjucks/issues/472#issuecomment-123219907
         pug: `${config.path.source}/*.{jade,pug}`,
         svg: `${config.path.source}/svg/*.svg`,
-        json: `${config.path.source}/**/*.json`,
         xml: `${config.path.source}/**/*.xml`,
         static_files: `${config.path.source}/static/**/*`,
     },
@@ -89,11 +87,10 @@ const paths = {
         css: `${config.path.source}/**/*.{sass,scss,css}`,
         fonts: `${config.path.source}/fonts/**/*`,
         img: `${config.path.source}/img/**/*`,
-        js: `${config.path.source}/**/*.js`,
+        js: `${config.path.source}/**/*.{js,json}`,
         nunjucks: `${config.path.source}/**/*.{njk,html}`,
         pug: `${config.path.source}/**/*.{jade,pug}`,
         svg: `${config.path.source}/svg/*.svg`,
-        json: `${config.path.source}/**/*.json`,
         xml: `${config.path.source}/**/*.xml`,
         static_files: `${config.path.source}/static/**/*`,
     },
@@ -238,12 +235,6 @@ gulp.task("fonts", () => {
         .pipe(gulp.dest(config.path.dist));
 });
 
-gulp.task("json", () => {
-    return gulp.src(paths.build.json, {base: config.path.source})
-        .pipe(gulp.dest(config.path.dist));
-});
-
-
 gulp.task("xml", () => {
     return gulp.src(paths.build.xml, {base: config.path.source})
         .pipe(gulp.dest(config.path.dist));
@@ -265,7 +256,6 @@ gulp.task("watch", () => {
     gulp.watch(paths.watch.nunjucks, gulp.series("nunjucks"));
     gulp.watch(paths.watch.pug, gulp.series("pug"));
     gulp.watch(paths.watch.svg, gulp.series("svg-sprite"));
-    gulp.watch(paths.watch.json, gulp.series("json"));
     gulp.watch(paths.watch.xml, gulp.series("xml"));
     gulp.watch(paths.watch.static_files, gulp.series("static_files"));
 });
